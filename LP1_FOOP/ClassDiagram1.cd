@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="LP1_FOOP.LogMessage">
+    <Position X="1" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAAABAAQAAAAAAAAAA=</HashCode>
+      <FileName>LogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.GenericUnstructuredLogMessage">
+    <Position X="6.75" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenericUnstructuredLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.StructuredLogMessage">
+    <Position X="0.75" Y="3.25" Width="12" />
+    <TypeIdentifier>
+      <HashCode>KAAAAAABAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAACAA=</HashCode>
+      <FileName>StructuredLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.GenericStructuredLogMessage">
+    <Position X="0.75" Y="6.5" Width="12.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>GenericStructuredLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.PMonProcessStopLogMessage">
+    <Position X="0.75" Y="8.25" Width="16.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAACAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>PMonProcessStopLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.EventConnectedToProcessLogMessage">
+    <Position X="0.75" Y="11" Width="20.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAADAAAAAAAAAAACAAAAAAAAAAACAAg=</HashCode>
+      <FileName>EventConnectedToProcessLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.EventConnectionClosedLogMessage">
+    <Position X="0.75" Y="14.25" Width="18.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAABAAAAAAAAAAACAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>EventConnectionClosedLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.EventConnectionResetLogMessage">
+    <Position X="0.75" Y="17" Width="19.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAABAAAAAAAAAAACAAAgAAAAAAAAAAg=</HashCode>
+      <FileName>EventConnectionResetLogMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.PMonProcessStopParser">
+    <Position X="23.25" Y="2.75" Width="13.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAQAAAAAACEAAAAAAAAAAA=</HashCode>
+      <FileName>PMonProcessStopParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LP1_FOOP.EventConnectedToProcessParser">
+    <Position X="23.25" Y="4.75" Width="13.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAQAAAAAACEAAAAAAAAAAA=</HashCode>
+      <FileName>EventConnectedToProcess.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LP1_FOOP.EventConnectionClosedParser">
+    <Position X="23.25" Y="7" Width="13.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAQAAAAAACEAAAAAAAAAAA=</HashCode>
+      <FileName>EventConnectionClosedParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LP1_FOOP.EventConnectionResetParser">
+    <Position X="23.25" Y="9.25" Width="13.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAABAAAAAAAAAAAACEAAAAAAAAAAA=</HashCode>
+      <FileName>EventConnectionResetParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LP1_FOOP.LogLineParser">
+    <Position X="13.5" Y="1" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAgCAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogLineParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.MessageFactory">
+    <Position X="14.5" Y="3.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MessageFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logLineParser" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LP1_FOOP.LogFileExtensions">
+    <Position X="14.75" Y="5.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogFileExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LP1_FOOP.IConcreteMessageParser">
+    <Position X="23.75" Y="1" Width="10.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IConcreteMessageParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
