@@ -19,57 +19,17 @@
             IEnumerable<LogMessage> logMessages = commandLineArguments.FilePath.ParseLogFile();
 
             //IEnumerable<LogMessage> filteredMessages = logMessages.Where(m => m.TypeName == "GenericUnstructured");
+            Sorter sorter = new Sorter();
+            Filtering filter = new Filtering();
 
-            logMessages = ApplyFilters(logMessages, commandLineArguments);
-            logMessages = ApplySorting(logMessages, commandLineArguments);
+
+            logMessages = sorter.ApplyFilter(logMessages, commandLineArguments);
+            logMessages = filter.ApplyFilter(logMessages, commandLineArguments);
 
             foreach (var logMessage in logMessages)
             {
                 Console.WriteLine(logMessage.ToOutputString());
             }
-        }
-
-        private static IEnumerable<LogMessage> ApplyFilters(
-            IEnumerable<LogMessage> messages,
-             CommandLineArguments commandLineArguments)
-        {
-            if (!string.IsNullOrWhiteSpace(commandLineArguments.FilterType))
-            {
-                messages = messages.Where(message => message.TypeName == commandLineArguments.FilterType);
-            }
-
-            if (commandLineArguments.FilterTimeGreaterThan.HasValue)
-            {
-                messages = messages.Where(message =>
-                    message.TimeStamp.HasValue &&
-                    message.TimeStamp.Value > commandLineArguments.FilterTimeGreaterThan.Value);
-            }
-
-            if (commandLineArguments.FilterTimeSmallerThan.HasValue)
-            {
-                messages = messages.Where(message =>
-                    message.TimeStamp.HasValue &&
-                    message.TimeStamp.Value < commandLineArguments.FilterTimeSmallerThan.Value);
-            }
-
-            return messages;
-        }
-
-        private static IEnumerable<LogMessage> ApplySorting(
-            IEnumerable<LogMessage> messages,
-             CommandLineArguments commandLineArguments)
-        {
-            if (commandLineArguments.SortByTime == "ASC")
-            {
-                return messages.OrderBy(message => message.TimeStamp);
-            }
-
-            if (commandLineArguments.SortByTime == "DESC")
-            {
-                return messages.OrderByDescending(message => message.TimeStamp);
-            }
-
-            return messages;
         }
     }
 }

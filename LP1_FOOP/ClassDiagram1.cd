@@ -73,7 +73,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LP1_FOOP.EventConnectionClosedParser">
-    <Position X="23.25" Y="7" Width="13.5" />
+    <Position X="23.25" Y="7" Width="8" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAQAAAAAACEAAAAAAAAAAA=</HashCode>
       <FileName>EventConnectionClosedParser.cs</FileName>
@@ -119,11 +119,41 @@
       <FileName>CommandLineArguments.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="LP1_FOOP.Sorter">
+    <Position X="21.75" Y="17.25" Width="8.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LP1_FOOP.Filtering">
+    <Position X="21.75" Y="18.75" Width="8.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filtering.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LP1_FOOP.Program">
+    <Position X="23.75" Y="11.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="LP1_FOOP.IConcreteMessageParser">
     <Position X="23.75" Y="1" Width="10.75" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IConcreteMessageParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LP1_FOOP.IFilter">
+    <Position X="21.75" Y="15.5" Width="8.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IFilter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
