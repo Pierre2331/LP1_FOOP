@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LP1_FOOP": {
+      "commandName": "Project",
+      "commandLineArgs": "-file C:\\Users\\Pierre\\source\\repos\\LP1_FOOP\\LP1_FOOP\\System.log.txt -filterType EventConnectionReset -sortByTime ASC"
+    }
+  }
+}

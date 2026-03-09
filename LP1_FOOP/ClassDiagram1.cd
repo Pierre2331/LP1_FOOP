@@ -10,7 +10,7 @@
   <Class Name="LP1_FOOP.GenericUnstructuredLogMessage">
     <Position X="6.75" Y="0.5" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>GenericUnstructuredLogMessage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,28 +31,28 @@
   <Class Name="LP1_FOOP.PMonProcessStopLogMessage">
     <Position X="0.75" Y="8.25" Width="16.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAACAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAACAAACAAAAAAAAAAAAAAQAAQAAAAAAA=</HashCode>
       <FileName>PMonProcessStopLogMessage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LP1_FOOP.EventConnectedToProcessLogMessage">
     <Position X="0.75" Y="11" Width="20.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAADAAAAAAAAAAACAAAAAAAAAAACAAg=</HashCode>
+      <HashCode>AAAAAAABAAAAAAADAAAAAAAAAAACAAAAQAAAAAACAAg=</HashCode>
       <FileName>EventConnectedToProcessLogMessage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LP1_FOOP.EventConnectionClosedLogMessage">
     <Position X="0.75" Y="14.25" Width="18.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAABAAAAAAAAAAACAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAABAAAAAAABAAAAAAAAAAACAAAAQAAAAAAAAAg=</HashCode>
       <FileName>EventConnectionClosedLogMessage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LP1_FOOP.EventConnectionResetLogMessage">
     <Position X="0.75" Y="17" Width="19.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAABAAAAAAAAAAACAAAgAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAABAAAAAAABAAAAAAAAAAACAAAgQAAAAAAAAAg=</HashCode>
       <FileName>EventConnectionResetLogMessage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -110,6 +110,13 @@
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LogFileExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LP1_FOOP.CommandLineArguments">
+    <Position X="23.75" Y="13" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAABAABAAIAAAABAAAAAAAA=</HashCode>
+      <FileName>CommandLineArguments.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="LP1_FOOP.IConcreteMessageParser">
