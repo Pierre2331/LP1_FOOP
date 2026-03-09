@@ -1,45 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace LP1_FOOP
 {
     public class EventConnectionResetParser : IConcreteMessageParser
     {
-        public LogMessage Parse(
-           string originalLine,
-           DateTime timestamp,
-           string processName,
-           int processNumber,
-           string category,
-           string level,
-           string logMessageType,
-           string messageContent)
+        public LogMessage Parse(GenericStructuredLogMessage genericStructuredLogMessage)
         {
-            if (!IsMatchingType(processName, level, logMessageType))
+            if (!IsMatchingType(genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.Level, genericStructuredLogMessage.LogMessageType))
             {
                 return null;
             }
 
-            Match match = MatchMessageContent(messageContent);
+            Match match = MatchMessageContent(genericStructuredLogMessage.MessageContent);
 
             if (!match.Success)
             {
                 return null;
             }
 
-            return CreateMessage(
-                originalLine,
-                timestamp,
-                processName,
-                processNumber,
-                category,
-                level,
-                logMessageType,
-                messageContent,
-                match);
+            return CreateMessage(genericStructuredLogMessage, match);
         }
 
         private bool IsMatchingType(string processName, string level, string logMessageType)
@@ -58,14 +38,7 @@ namespace LP1_FOOP
         }
 
         private EventConnectionResetLogMessage CreateMessage(
-            string originalLine,
-            DateTime timestamp,
-            string processName,
-            int processNumber,
-            string category,
-            string level,
-            string logMessageType,
-            string messageContent,
+            GenericStructuredLogMessage genericStructuredLogMessage,
             Match match)
         {
             int systemNumber = int.Parse(match.Groups["sysnum"].Value);
@@ -75,15 +48,15 @@ namespace LP1_FOOP
             int reasonNumber = int.Parse(match.Groups["reason"].Value);
 
             return new EventConnectionResetLogMessage(
-                originalLine,
-                timestamp,
+                genericStructuredLogMessage.OriginalLine,
+                genericStructuredLogMessage.TimeStamp,
                 "EventConnectionReset",
-                processName,
-                processNumber,
-                category,
-                level,
-                logMessageType,
-                messageContent,
+                genericStructuredLogMessage.ProcessName,
+                genericStructuredLogMessage.ProcessNumber,
+                genericStructuredLogMessage.Category,
+                genericStructuredLogMessage.Level,
+                genericStructuredLogMessage.LogMessageType,
+                genericStructuredLogMessage.MessageContent,
                 systemNumber,
                 connectedProcessType,
                 connectedProcessNumber,

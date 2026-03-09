@@ -8,21 +8,21 @@ namespace LP1_FOOP
 {
     public class EventConnectionClosedParser : IConcreteMessageParser
     {
-        public LogMessage Parse(string originalLine, DateTime timestamp, string processName, int processNumber, string category, string level, string logMessageType, string messageContent)
+        public LogMessage Parse(GenericStructuredLogMessage genericStructuredLogMessage)
         {
-            if (!isMatchingType(processName, logMessageType, level))
+            if (!isMatchingType(genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.LogMessageType, genericStructuredLogMessage.Level))
             {
                 return null;
             }
 
-            Match match = MatchMessageContent(messageContent);
+            Match match = MatchMessageContent(genericStructuredLogMessage.MessageContent);
 
             if (!match.Success)
             {
                 return null;
             }
 
-            return CreateMessage(originalLine, timestamp, processName, processNumber, category, level, logMessageType, messageContent, match);
+            return CreateMessage(genericStructuredLogMessage, match);
         }
 
         private bool isMatchingType(string processName, string logMessageType, string level)
@@ -38,14 +38,7 @@ namespace LP1_FOOP
         }
 
         private EventConnectionClosedLogMessage CreateMessage(
-            string originalLine,
-            DateTime timestamp,
-            string processName,
-            int processNumber,
-            string category,
-            string level,
-            string logMessageType,
-            string messageContent,
+            GenericStructuredLogMessage genericStructuredLogMessage,
             Match match)
         {
             int systemNumber = int.Parse(match.Groups["sysnum"].Value);
@@ -53,7 +46,7 @@ namespace LP1_FOOP
             int connectedProcessNumber = int.Parse(match.Groups["pnum"].Value);
             int connectionNumber = int.Parse(match.Groups["connum"].Value);
 
-            return new EventConnectionClosedLogMessage(originalLine, timestamp, "EventConnectedToProcess", processName, processNumber, category, level, logMessageType, messageContent, systemNumber, connectedProcessType, connectedProcessNumber, connectionNumber);
+            return new EventConnectionClosedLogMessage(genericStructuredLogMessage.OriginalLine, genericStructuredLogMessage.TimeStamp, "EventConnectionClosed", genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.ProcessNumber, genericStructuredLogMessage.Category, genericStructuredLogMessage.Level, genericStructuredLogMessage.LogMessageType, genericStructuredLogMessage.MessageContent, systemNumber, connectedProcessType, connectedProcessNumber, connectionNumber);
         }
     }
 }

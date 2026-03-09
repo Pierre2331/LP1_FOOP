@@ -23,7 +23,7 @@ namespace LP1_FOOP
                 return null;
             }
 
-            return CreateMessage(genericStructuredLogMessage.OriginalLine, genericStructuredLogMessage.TimeStamp, genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.ProcessNumber, genericStructuredLogMessage.Category, level, logMessageType, messageContent, match);
+            return CreateMessage(genericStructuredLogMessage, match);
         }
 
         private bool isMatchingType(string processName, string logMessageType)
@@ -39,14 +39,7 @@ namespace LP1_FOOP
         }
 
         private EventConnectedToProcessLogMessage CreateMessage(
-            string originalLine,
-            DateTime timestamp,
-            string processName,
-            int processNumber,
-            string category,
-            string level,
-            string logMessageType,
-            string messageContent,
+            GenericStructuredLogMessage genericStructuredLogMessage,
             Match match)
         {
             int systemNumber = int.Parse(match.Groups["sysnum"].Value);
@@ -56,7 +49,7 @@ namespace LP1_FOOP
             string hostname = match.Groups["host"].Value;
             string ipAddress = match.Groups["ip"].Value;
 
-            return new EventConnectedToProcessLogMessage(originalLine, timestamp, "EventConnectedToProcess", processName, processNumber, category, level, logMessageType, messageContent, systemNumber, connectedProcessType, connectedProcessNumber, connectionNumber, hostname, ipAddress);
+            return new EventConnectedToProcessLogMessage(genericStructuredLogMessage.OriginalLine, genericStructuredLogMessage.TimeStamp, "EventConnectedToProcess", genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.ProcessNumber, genericStructuredLogMessage.Category, genericStructuredLogMessage.Level, genericStructuredLogMessage.LogMessageType, genericStructuredLogMessage.MessageContent, systemNumber, connectedProcessType, connectedProcessNumber, connectionNumber, hostname, ipAddress);
         }
     }
 }

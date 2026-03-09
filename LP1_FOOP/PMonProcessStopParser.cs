@@ -1,28 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace LP1_FOOP
 {
     public class PMonProcessStopParser : IConcreteMessageParser
     {
-        public LogMessage Parse(string originalLine, DateTime timestamp, string processName, int processNumber, string category, string level, string logMessageType, string messageContent)
+        public LogMessage Parse(GenericStructuredLogMessage genericStructuredLogMessage)
         {
-            if (!isMatchingType(processName, logMessageType))
+            if (!isMatchingType(genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.LogMessageType))
             {
                 return null;
             }
 
-            Match match = MatchMessageContent(messageContent);
+            Match match = MatchMessageContent(genericStructuredLogMessage.MessageContent);
 
             if (!match.Success)
             {
                 return null;
             }
 
-            return CreateMessage(originalLine, timestamp, processName, processNumber, category, level, logMessageType, messageContent, match);
+            return CreateMessage(genericStructuredLogMessage, match);
         }
 
         private bool isMatchingType(string processName, string logMessageType)
@@ -37,29 +34,16 @@ namespace LP1_FOOP
             return Regex.Match(messageContent, pattern);
         }
 
-        private PMonProcessStopLogMessage CreateMessage(string originalLine,
-            DateTime timestamp,
-            string processName,
-            int processNumber,
-            string category,
-            string level,
-            string logMessageType,
-            string messageContent,
+        private PMonProcessStopLogMessage CreateMessage(
+            GenericStructuredLogMessage genericStructuredLogMessage,
             Match match)
         {
             string targetProcessName = match.Groups["targetName"].Value.Trim();
             int targetProcessNumber = int.Parse(match.Groups["targetNumber"].Value);
             string signalType = match.Groups["signalType"].Value.Trim();
 
-            return new PMonProcessStopLogMessage(originalLine,
-                timestamp,
-                "PMonProcessStop",
-                processName,
-                processNumber,
-                category,
-                level,
-                logMessageType,
-                messageContent,
+            return new PMonProcessStopLogMessage(
+                genericStructuredLogMessage.OriginalLine, genericStructuredLogMessage.TimeStamp, "EventConnectedToProcess", genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.ProcessNumber, genericStructuredLogMessage.Category, genericStructuredLogMessage.Level, genericStructuredLogMessage.LogMessageType, genericStructuredLogMessage.MessageContent,
                 targetProcessName,
                 targetProcessNumber,
                 signalType);

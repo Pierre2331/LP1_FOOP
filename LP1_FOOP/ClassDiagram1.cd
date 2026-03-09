@@ -57,7 +57,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="LP1_FOOP.PMonProcessStopParser">
-    <Position X="23.25" Y="2.75" Width="13.25" />
+    <Position X="23.25" Y="2.75" Width="7.75" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAQAAAAAACEAAAAAAAAAAA=</HashCode>
       <FileName>PMonProcessStopParser.cs</FileName>
@@ -65,7 +65,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LP1_FOOP.EventConnectedToProcessParser">
-    <Position X="23.25" Y="4.75" Width="13.75" />
+    <Position X="23.25" Y="4.75" Width="8.25" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAQAAAAAACEAAAAAAAAAAA=</HashCode>
       <FileName>EventConnectedToProcess.cs</FileName>
@@ -81,7 +81,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LP1_FOOP.EventConnectionResetParser">
-    <Position X="23.25" Y="9.25" Width="13.5" />
+    <Position X="23.25" Y="9.25" Width="8" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAABAAAAAAAAAAAACEAAAAAAAAAAA=</HashCode>
       <FileName>EventConnectionResetParser.cs</FileName>
