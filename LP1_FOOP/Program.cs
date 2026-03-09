@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             string logFilePath = "C:\\Users\\Pierre\\source\\repos\\LP1_FOOP\\LP1_FOOP\\System.log.txt";
+            // Test
 
             IEnumerable<LogMessage> logMessages = logFilePath.ParseLogFile();
 
