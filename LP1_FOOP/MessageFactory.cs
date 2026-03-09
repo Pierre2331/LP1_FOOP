@@ -40,16 +40,8 @@ namespace LP1_FOOP
                     return structuredLogMessage;
                 }
 
-                LogMessage concreteMessage = parser.Parse(
-                    structuredLogMessage.OriginalLine,
-                    structuredLogMessage.TimeStamp.Value,
-                    structuredLogMessage.ProcessName,
-                    structuredLogMessage.ProcessNumber,
-                    structuredLogMessage.Category,
-                    structuredLogMessage.Level,
-                    structuredLogMessage.LogMessageType,
-                    structuredLogMessage.MessageContent
-                );
+                LogMessage concreteMessage = parser.Parse(structuredLogMessage);
+                
 
                 if (concreteMessage != null)
                 {

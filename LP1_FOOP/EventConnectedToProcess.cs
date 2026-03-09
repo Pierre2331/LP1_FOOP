@@ -9,21 +9,21 @@ namespace LP1_FOOP
 {
     public class EventConnectedToProcessParser : IConcreteMessageParser
     {
-        public LogMessage Parse(string originalLine, DateTime timestamp, string processName, int processNumber, string category, string level, string logMessageType, string messageContent)
+        public LogMessage Parse(GenericStructuredLogMessage genericStructuredLogMessage)
         {
-            if (!isMatchingType(processName, logMessageType))
+            if (!isMatchingType(genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.LogMessageType))
             {
                 return null;
             }
 
-            Match match = MatchMessageContent(messageContent);
+            Match match = MatchMessageContent(genericStructuredLogMessage.MessageContent);
 
             if (!match.Success)
             {
                 return null;
             }
 
-            return CreateMessage(originalLine, timestamp, processName, processNumber, category, level, logMessageType, messageContent, match);
+            return CreateMessage(genericStructuredLogMessage.OriginalLine, genericStructuredLogMessage.TimeStamp, genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.ProcessNumber, genericStructuredLogMessage.Category, level, logMessageType, messageContent, match);
         }
 
         private bool isMatchingType(string processName, string logMessageType)
