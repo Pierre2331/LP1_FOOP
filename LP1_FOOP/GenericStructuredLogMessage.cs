@@ -7,7 +7,7 @@ namespace LP1_FOOP
 {
     public class GenericStructuredLogMessage : StructuredLogMessage
     {
-        public GenericStructuredLogMessage(string originalLine, DateTime? timeStamp, string typeName, string processName, int processNumber, string category, string level, string lowMessageType, string messageContent) : base(originalLine, timeStamp, "GenericStructured", processName, processNumber, category, level, lowMessageType, messageContent)
+        public GenericStructuredLogMessage(string originalLine, DateTime? timeStamp, string typeName, string processName, int processNumber, string category, string level, string lowMessageType, string messageContent) : base(originalLine, timeStamp, typeName, processName, processNumber, category, level, lowMessageType, messageContent)
         {
         }
 

@@ -7,7 +7,7 @@ namespace LP1_FOOP
 {
     public class PMonProcessStopLogMessage : StructuredLogMessage
     {
-        public PMonProcessStopLogMessage(string originalLine, DateTime? timeStamp, string typeName, string processName, int processNumber, string category, string level, string lowMessageType, string messageContent, string targetProcessName, int targetProcessNumber, string signalType) : base(originalLine, timeStamp, "17/Pmon", processName, processNumber, category, level, lowMessageType, messageContent)
+        public PMonProcessStopLogMessage(string originalLine, DateTime? timeStamp, string typeName, string processName, int processNumber, string category, string level, string lowMessageType, string messageContent, string targetProcessName, int targetProcessNumber, string signalType) : base(originalLine, timeStamp, typeName, processName, processNumber, category, level, lowMessageType, messageContent)
         {
             TargetProcessName = targetProcessName;
             TargetProcessNumber = targetProcessNumber;
@@ -27,6 +27,11 @@ namespace LP1_FOOP
         public string SignalType
         {
             get;
+        }
+
+        public override string ToOutputString()
+        {
+            return $"PMonProcessStop: {TimeStamp:yyyy.MM.dd HH:mm:ss.fff} {ProcessName}({ProcessNumber}), {Category}, {Level}, {LogMessageType}, {MessageContent}, {TargetProcessName}, {TargetProcessNumber}, {SignalType}";
         }
     }
 }

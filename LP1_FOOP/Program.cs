@@ -4,12 +4,15 @@
     {
         static void Main(string[] args)
         {
-            string logFilePath = "C:\\Users\\Pierre\\source\\repos\\LP1_FOOP\\LP1_FOOP\\System.log.txt";
+            string logFilePath = "C:\\Users\\Felix\\Desktop\\FH Projekte\\LP1_FOOP\\LP1_FOOP\\System.log.txt";
             // Test
 
             IEnumerable<LogMessage> logMessages = logFilePath.ParseLogFile();
 
-            foreach (var logMessage in logMessages)
+            IEnumerable<LogMessage> filteredMessages = logMessages.Where(m => m.TypeName == "GenericStructured");
+
+
+            foreach (var logMessage in filteredMessages)
             {
                 Console.WriteLine(logMessage.ToOutputString());
             }

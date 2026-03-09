@@ -43,7 +43,7 @@ namespace LP1_FOOP
             string signalType = match.Groups["signalType"].Value.Trim();
 
             return new PMonProcessStopLogMessage(
-                genericStructuredLogMessage.OriginalLine, genericStructuredLogMessage.TimeStamp, "EventConnectedToProcess", genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.ProcessNumber, genericStructuredLogMessage.Category, genericStructuredLogMessage.Level, genericStructuredLogMessage.LogMessageType, genericStructuredLogMessage.MessageContent,
+                genericStructuredLogMessage.OriginalLine, genericStructuredLogMessage.TimeStamp, "PmonProcessStop", genericStructuredLogMessage.ProcessName, genericStructuredLogMessage.ProcessNumber, genericStructuredLogMessage.Category, genericStructuredLogMessage.Level, genericStructuredLogMessage.LogMessageType, genericStructuredLogMessage.MessageContent,
                 targetProcessName,
                 targetProcessNumber,
                 signalType);

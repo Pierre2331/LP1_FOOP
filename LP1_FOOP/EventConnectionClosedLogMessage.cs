@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace LP1_FOOP
@@ -34,6 +35,11 @@ namespace LP1_FOOP
         public int ConnectionNumber
         {
             get;
+        }
+
+        public override string ToOutputString()
+        {
+            return $"EventConnectionClosed: {TimeStamp:yyyy.MM.dd HH:mm:ss.fff} {ProcessName}({ProcessNumber}), {Category}, {Level}, {LogMessageType}, {MessageContent}, {SystemNumber}, {ConnectedProcessType}, {ConnectedProcessNumber}, {ConnectionNumber}";
         }
     }
 }

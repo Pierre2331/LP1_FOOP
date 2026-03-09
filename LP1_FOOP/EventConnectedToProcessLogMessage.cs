@@ -41,5 +41,10 @@ namespace LP1_FOOP
         {
             get;
         }
+
+        public override string ToOutputString()
+        {
+            return $"EventConnectedToProcess: {TimeStamp:yyyy.MM.dd HH:mm:ss.fff} {ProcessName}({ProcessNumber}), {Category}, {Level}, {LogMessageType}, {MessageContent}, {SystemNumber}, {ConnectedProcessType}, {ConnectedProcessNumber}, {ConnectionNumber}, {Hostname}, {IPAddress}";
+        }
     }
 }

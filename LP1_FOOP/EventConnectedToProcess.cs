@@ -33,7 +33,7 @@ namespace LP1_FOOP
 
         private Match MatchMessageContent(string messageContent)
         {
-            string pattern = @"^Connected to \(SYS:\s+(?<sysnum>\d+)\s+(?<ptype>\.+?)\s+-num\s+(?<pnum>\d+)\s+CONN:\s+(?<connum>\d+)\)\s+@\s+(?<host>.+?)\s+\((?<ip>.+?)\)$";
+            string pattern = @"^Connected to \(SYS:\s+(?<sysnum>\d+)\s+(?<ptype>.+?)\s+-num\s+(?<pnum>\d+)\s+CONN:\s+(?<connum>\d+)\)\s+@\s+(?<host>.+?)\s+\((?<ip>.+?)\)$";
 
             return Regex.Match(messageContent, pattern);
         }
